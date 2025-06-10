@@ -64,8 +64,15 @@ echo "9. Получение списка новостей с request_id:"
 curl http://localhost:8000/news\?request_id\=12345
 echo -e "\n"
 
-# 10. Проверка логов для request_id=12345
-echo "10. Проверка логов для request_id=12345:"  
+# 10. Проверка логов для request_id=12345     
+echo "10. Проверка логов для request_id=12345:"
+docker-compose logs api-gateway | grep 12345
+echo -e "\n"
+docker-compose logs news-service | grep 12345
+echo -e "\n"                                     
+docker-compose logs comment-service | grep 12345  
+echo -e "\n"
+docker-compose logs censor-service | grep 12345  
    ```
 
 ## Требования
